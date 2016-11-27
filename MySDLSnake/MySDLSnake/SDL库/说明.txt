@@ -1,0 +1,6 @@
+此包里面是32bit的SDL相关库，有SDL_image,SDL_ttf,SDL_mixer,SDL_draw
+
+安装方法:
+     dll文件夹内文件拷贝至C:\WINDOWS\System32下，或者你直接把它们放到工程下
+     include文件夹内文件可以拷贝至VC的include目录下
+     lib文件夹内文件可以拷贝至VC的lib目录下
