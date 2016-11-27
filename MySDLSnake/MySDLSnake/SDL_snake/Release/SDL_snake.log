@@ -1,0 +1,26 @@
+﻿生成启动时间为 2014/6/21 22:12:38。
+     1>项目“C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\SDL_snake.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>main.cpp(41): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 参见“fopen”的声明
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\Release\SDL_snake.exe" /INCREMENTAL:NO /NOLOGO SDL.lib SDLmain.lib SDL_draw_static.lib SDL_ttf.lib SDL_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\Release\SDL_snake.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\Release\SDL_snake.lib" /MACHINE:X86 /SAFESEH Release\Frame.obj
+         Release\Game.obj
+         Release\main.obj
+         Release\Snake.obj
+         Release\StdAfx.obj
+     1>SDL_draw_static.lib(SDL_draw.obj) : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:ICF”规范)
+            正在创建库 C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\Release\SDL_snake.lib 和对象 C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\Release\SDL_snake.exp
+     1>LINK : warning LNK4098: 默认库“MSVCRTD”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+         正在生成代码
+     1>c:\users\bearer\desktop\mysdlsnake\sdl_snake\main.cpp(31): warning C4700: 使用了未初始化的局部变量“answer”
+         已完成代码的生成
+     1>SDL_draw_static.lib(SDL_draw.obj) : warning LNK4204: “C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\Release\vc110.pdb”缺少引用模块的调试信息；正在链接对象，如同没有调试信息一样
+         SDL_snake.vcxproj -> C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\Release\SDL_snake.exe
+     1>已完成生成项目“C:\Users\bearer\Desktop\MySDLSnake\SDL_snake\SDL_snake.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.06
