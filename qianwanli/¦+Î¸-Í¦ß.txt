@@ -1,0 +1,8 @@
+1.安装OpenOffice，进入到OpenOffice.org.3.3文件夹，运行setup应用程序一步一步安装就好。
+2.启动OpenOffice服务，CMD命令进入OpenOffice安装目录下的program目录，键入如下命令
+soffice "-accept=socket,host=localhost,port=8100;urp;StarOffice.ServiceManager" -nologo -headless -nofirststartwizard
+（对于咱们的笔记本，每次关机以后都要重新这样操作启动OpenOffice服务，以后部署到服务器，则不用，所以没有影响）
+3.安装SWFTools，运行swftools-2013-04-0901007.exe文件安装完成即可，
+用eclipse打开项目com.estone.test包下的DocConverter类，97行，那个路径要改成你安装SWFTools的路径
+我的是C:/Program Files (x86)/SWFTools/pdf2swf.exe，改成你的C:/XXXX/SWFTools/pdf2swf.exe
+4.数据库有更改，也需要重新运行SQL脚本。连接上数据库，运行dbo.sql脚本就可以了，注意项目里要改成你的账号密码
