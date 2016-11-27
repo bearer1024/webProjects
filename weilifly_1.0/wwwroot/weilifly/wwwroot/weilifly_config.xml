@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap_gen.py example configuration script
+
+  This file specifies a set of sample input parameters for the
+  sitemap_gen.py client.
+
+  You should copy this file into "config.xml" and modify it for
+  your server.
+
+
+  ********************************************************* -->
+
+
+<!-- ** MODIFY **
+  The "site" node describes your basic web site.
+
+  Required attributes:
+    base_url   - the top-level URL of the site being mapped
+    store_into - the webserver path to the desired output file.
+                 This should end in '.xml' or '.xml.gz'
+                 (the script will create this file)
+
+  Optional attributes:
+    verbose    - an integer from 0 (quiet) to 3 (noisy) for
+                 how much diagnostic output the script gives
+    suppress_search_engine_notify="1"
+               - disables notifying search engines about the new map
+                 (same as the "testing" command-line argument.)
+    default_encoding
+               - names a character encoding to use for URLs and
+                 file paths.  (Example: "UTF-8")
+-->
+<site
+  base_url="http://www.weilifly.com"
+  store_into="D:\wwwroot\weilifly\wwwroot\sitemap.xml"
+  verbose="1"
+  >
+
+  <!-- ********************************************************
+          INPUTS
+
+  All the various nodes in this section control where the script
+  looks to find URLs.
+
+  MODIFY or DELETE these entries as appropriate for your server.
+  ********************************************************* -->
+
+  <!-- ** MODIFY or DELETE **
+    "url" nodes specify individual URLs to include in the map.
+
+    Required attributes:
+      href       - the URL
+
+    Optional attributes:
+      lastmod    - timestamp of last modification (ISO8601 format)
+      changefreq - how often content at this URL is usually updated
+      priority   - value 0.0 to 1.0 of relative importance in your site
+  -->
+<!--
+  <url  href="http://www.example.com/stats?q=name"  />
+  <url
+     href="http://www.example.com/stats?q=age"
+     lastmod="2004-11-14T01:00:00-07:00"
+     changefreq="yearly"
+     priority="0.3"
+  />
+
+-->
+
+  <!-- ** MODIFY or DELETE **
+    "urllist" nodes name text files with lists of URLs.
+    An example file "example_urllist.txt" is provided.
+
+    Required attributes:
+      path       - path to the file
+
+    Optional attributes:
+      encoding   - encoding of the file if not US-ASCII
+  -->
+  <!--
+  <urllist  path="example_urllist.txt"  encoding="UTF-8"  />
+-->
+
+  <!-- ** MODIFY or DELETE **
+    "directory" nodes tell the script to walk the file system
+    and include all files and directories in the Sitemap.
+
+    Required attributes:
+      path       - path to begin walking from
+      url        - URL equivalent of that path
+
+    Optional attributes:
+      default_file - name of the index or default file for directory URLs
+  -->
+  <!--
+  <directory  path="/var/www/icons"    url="http://www.example.com/images/" />
+  <directory
+     path="/var/www/docroot"
+     url="http://www.example.com/"
+     default_file="index.html"
+  />
+  -->
+
+<!--
+  <directory  path="D:\wwwroot\fs0757q\wwwroot"    url="http://fs0757q.w127.myhostadmin.net/" />
+  <directory  path="D:\wwwroot\fs0757q\wwwroot\bbs"    url="http://fs0757q.w127.myhostadmin.net/bbs/" />
+-->
+
+  <!-- ** MODIFY or DELETE **
+    "accesslog" nodes tell the script to scan webserver log files to
+    extract URLs on your site.  Both Common Logfile Format (Apache's default
+    logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+
+    Required attributes:
+      path       - path to the file
+
+    Optional attributes:
+      encoding   - encoding of the file if not US-ASCII
+  -->
+   <accesslog  path="D:\w3log\W3SVC10704\u_ex140506.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140507.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140508.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140509.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140510.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140511.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140512.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140513.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140514.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140515.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140516.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140517.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140518.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140519.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140520.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140521.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140522.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140523.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140524.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140525.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140526.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140527.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140528.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140529.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140530.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140531.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140601.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140602.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140603.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140604.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140605.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140606.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140607.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140608.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140609.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140610.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140611.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140612.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140613.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140614.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140615.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140616.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140617.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140618.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140619.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140620.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140621.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140622.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140623.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140624.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140625.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140626.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140627.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140628.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140629.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140630.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140701.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140702.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140703.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140704.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140705.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140706.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140707.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140708.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140714.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140715.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140716.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140717.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140718.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140719.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140720.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140721.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140722.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140723.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140724.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140725.log"       encoding="US-ASCII"  />
+ <accesslog  path="D:\w3log\W3SVC10704\u_ex140726.log"       encoding="US-ASCII"  />
+
+  <!--
+	<accesslog  path="D:/w3log/W3SVC10088/ex090601.log"       encoding="US-ASCII"  />
+  -->
+  <!-- ** MODIFY or DELETE **
+    "sitemap" nodes tell the script to scan other Sitemap files.  This can
+    be useful to aggregate the results of multiple runs of this script into
+    a single Sitemap.
+
+    Required attributes:
+      path       - path to the file
+  -->
+  <!--
+  <sitemap    path="/var/www/docroot/subpath/sitemap.xml" />
+-->
+
+  <!-- ********************************************************
+          FILTERS
+
+  Filters specify wild-card patterns that the script compares
+  against all URLs it finds.  Filters can be used to exclude
+  certain URLs from your Sitemap, for instance if you have
+  hidden content that you hope the search engines don't find.
+
+  Filters can be either type="wildcard", which means standard
+  path wildcards (* and ?) are used to compare against URLs,
+  or type="regexp", which means regular expressions are used
+  to compare.
+
+  Filters are applied in the order specified in this file.
+
+  An action="drop" filter causes exclusion of matching URLs.
+  An action="pass" filter causes inclusion of matching URLs,
+  shortcutting any other later filters that might also match.
+  If no filter at all matches a URL, the URL will be included.
+  Together you can build up fairly complex rules.
+
+  The default action is "drop".
+  The default type is "wildcard".
+
+  You can MODIFY or DELETE these entries as appropriate for
+  your site.  However, unlike above, the example entries in
+  this section are not contrived and may be useful to you as
+  they are.
+  ********************************************************* -->
+
+  <!-- Exclude URLs that end with a '~'   (IE: emacs backup files)      -->
+  
+
+</site>

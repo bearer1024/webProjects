@@ -1,0 +1,17 @@
+<?PHP exit;?>	1401153216	admin	1	59.52.89.92		GET={}; POST={};
+<?PHP exit;?>	1401153218	admin	1	59.52.89.92	index	GET={}; POST={};
+<?PHP exit;?>	1401153222	admin	1	59.52.89.92	cloud	GET={operation=open; }; POST={};
+<?PHP exit;?>	1401153269	admin	1	59.52.89.92	cloud	GET={operation=open; step=2; cloud_api_ip=101.226.62.63; }; POST={cloud_api_ip=101.226.62.63; };
+<?PHP exit;?>	1401153272	admin	1	59.52.89.92	cloud	GET={operation=open; step=2; cloud_api_ip=101.226.62.63; }; POST={cloud_api_ip=101.226.62.63; };
+<?PHP exit;?>	1401153320	admin	1	59.52.89.92	cloud	GET={frames=yes; operation=applist; }; POST={};
+<?PHP exit;?>	1401153322	admin	1	59.52.89.92	cloud	GET={operation=applist; }; POST={};
+<?PHP exit;?>	1401153335	admin	1	59.52.89.92		GET={}; POST={};
+<?PHP exit;?>	1401153336	admin	1	59.52.89.92	index	GET={}; POST={};
+<?PHP exit;?>	1401153339	admin	1	59.52.89.92	plugins	GET={}; POST={};
+<?PHP exit;?>	1401153363	admin	1	59.52.89.92	cloudaddons	GET={}; POST={};
+<?PHP exit;?>	1401153435	admin	1	59.52.89.92		GET={}; POST={};
+<?PHP exit;?>	1401153435	admin	1	59.52.89.92	index	GET={}; POST={};
+<?PHP exit;?>	1401153439	admin	1	59.52.89.92	setting	GET={operation=basic; }; POST={};
+<?PHP exit;?>	1401153443	admin	1	59.52.89.92	nav	GET={}; POST={};
+<?PHP exit;?>	1401153455	admin	1	59.52.89.92	nav	GET={operation=headernav; displayordernew={2=2; 5=6; 6=9; 7=10; }; namenew={2=论坛; 5=游戏; 6=插件; 7=帮助; }; subtypenew={}; defaultindex=forum.php; availablenew={2=1; 6=1; }; }; POST={displayordernew={2=2; 5=6; 6=9; 7=10; }; namenew={2=论坛; 5=游戏; 6=插件; 7=帮助; }; subtypenew={}; defaultindex=forum.php; availablenew={2=1; 6=1; }; };
+<?PHP exit;?>	1401153466	admin	1	59.52.89.92	nav	GET={operation=headernav; }; POST={};

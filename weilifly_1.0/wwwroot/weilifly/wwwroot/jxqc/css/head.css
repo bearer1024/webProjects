@@ -1,0 +1,35 @@
+#head{
+	width: 70%;
+	margin: 0 auto;
+	height: 200px;
+	background-image: url(../images/bgimages3.jpg);
+}
+#menu{
+	width: 70%;
+	height: 40px;
+	margin: 0 auto;
+	background-color: #3366CC;
+}
+#menu li{
+	text-decoration: none;
+	float: left;
+	padding-right: 20px;
+	padding-top: 10px;
+	
+}
+#menu a{
+	text-decoration: none;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+#menu a:hover{
+	background-color: red;
+}
+#foot{
+	width: 70%;
+	height: 40px;
+	margin: 0 auto;
+	background-color: #3366CC;
+	padding-top: 13px;
+	padding-left: 10px;
+}
