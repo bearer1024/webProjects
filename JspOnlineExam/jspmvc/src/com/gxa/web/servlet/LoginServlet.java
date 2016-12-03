@@ -42,20 +42,18 @@ public class LoginServlet extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 		MD5 md5 = new MD5();
 		pwd = md5.getMD5ofStr(pwd);
-		// ´´½¨daoÊµÀı
+
 		UserInfoDao userInfoDao = new UserInfoDao();
 		UserInfo userInfo = userInfoDao.login(username, pwd);
 		if (userInfo != null) {
-			// ³É¹¦£¬ÉèÖÃsession,²¢Ìø×ªµ½ÓÃ»§½çÃæ
 			request.getSession().setAttribute("user", userInfo);
 			response.sendRedirect("user");
 		} else {
-			// Ê§°Ü
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<html><head></head><body>");
 			out.print("<script type=\"text/javascript\" language=\"javascript\">");
-			out.print("alert('ÓÃ»§»òÃÜÂë´íÎó');");
+			out.print("alert('ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');");
 			out.print("window.location='login.jsp';");
 			out.print("</script>");
 			out.print("</body></html>");
