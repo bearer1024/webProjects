@@ -14,7 +14,6 @@ import com.gxa.common.DBManager;
 public class UserInfoDao {
 
 	/**
-	 * 保存注册信息
 	 * @param userInfo
 	 * @throws Exception 
 	 */
@@ -24,11 +23,10 @@ public class UserInfoDao {
 		PreparedStatement pst = null;
 		try{
 			conn = DBManager.getConnection();
-			//sql语句
+			//sql statement
 			String sql = "insert into USER_INFO (username, pwd, name, sex, telephone, email ,remark) values" +
 					"(?, ? ,?, ?,?, ? ,?)";
 			pst = conn.prepareStatement(sql);
-			//设置参数
 			pst.setString(1, userInfo.getUsername());
 			pst.setString(2, userInfo.getPwd());
 			pst.setString(3, userInfo.getName());
@@ -37,13 +35,13 @@ public class UserInfoDao {
 			pst.setString(6, userInfo.getEmail());
 			pst.setString(7, userInfo.getRemark());
 			
-			pst.executeUpdate();//执行
+			pst.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
 			throw e;
 			
 		}
-		//最后关闭语句和连接
+		//close connection
 		finally{
 			if(pst!=null){
 				try {
@@ -68,10 +66,9 @@ public class UserInfoDao {
 	}
 	
 	/**
-	 * 检查用户名是否存在 
 	 * @param username
 	 * @param id
-	 * @return true 存在  false 不存在
+	 * @return true  false
 	 */
 	public boolean isExistUsername(String username,int id){
         Connection conn = null;
@@ -79,10 +76,8 @@ public class UserInfoDao {
 		PreparedStatement pst = null;
 		try{
 			conn = DBManager.getConnection();
-			//sql语句
 			String sql = "select * from USER_INFO where username = '"+username+"' and id <>"+id;
 			pst = conn.prepareStatement(sql);
-			//设置参数
 		
 			
 			ResultSet rs = pst.executeQuery();
@@ -94,7 +89,6 @@ public class UserInfoDao {
 			e.printStackTrace();
 			
 		}
-		//最后关闭语句和连接
 		finally{
 			if(pst!=null){
 				try {
@@ -122,7 +116,6 @@ public class UserInfoDao {
 	
 
 	/**
-	 * 登陆方法
 	 * @param username
 	 * @param pwd
 	 * @return
@@ -132,21 +125,12 @@ public class UserInfoDao {
 			
 			PreparedStatement pst = null;
 			try{
-				//获取连接
 				conn = DBManager.getConnection();
-				//sql语句
-				/*这里最好使用占位符?设参数的方式查询，避免sql注入，比如这里我们如果写成
-				 * sql = "select * from USER_INFO where username = '"+username+"' and pwd= '"+pwd+"'";
-				 * 那么登陆的时候username传值为a' or '1'='1,pwd传值为a' or '1'='1,sql连接后语句变为
-				 * "select * from USER_INFO where username='a' or '1'='1' and pwd='a' or '1'='1'，那么这条sql语句一定成立的
-				 * 这样用户 就能登陆系统，这是我们要避免的
-				 * */
+				//to avoid sql injection
 				String sql = "select * from USER_INFO where username = ? and pwd= ?";
 				pst = conn.prepareStatement(sql);
 				pst.setString(1, username);
-				pst.setString(2, pwd);
-				//设置参数
-			
+				pst.setString(2, pwd);			
 				
 				ResultSet rs = pst.executeQuery();
 				if(rs.next()){
@@ -166,7 +150,6 @@ public class UserInfoDao {
 				e.printStackTrace();
 				
 			}
-			//最后关闭语句和连接
 			finally{
 				if(pst!=null){
 					try {
@@ -191,16 +174,15 @@ public class UserInfoDao {
 	}
 	
 	/**
-	 * 查询方法
-	 * @param username 用户名
-	 * @param name  姓名 
-	 * @param start 开始记录数
-	 * @param pageLine 每页显示数
+	 * @param username 锟矫伙拷锟斤拷
+	 * @param name  锟斤拷锟斤拷 
+	 * @param start 锟斤拷始锟斤拷录锟斤拷
+	 * @param pageLine 每页锟斤拷示锟斤拷
 	 * @return
 	 */
 	public List getUserList(String username,String name ,int start ,int pageLine){
 		Connection conn = null;
-		if (username == null) {// 为null的情况要考虑不然在拼接sql的时候会出问题
+		if (username == null) {
 			username = "";
 		}
 		if (name == null) {
@@ -211,20 +193,15 @@ public class UserInfoDao {
 
 		PreparedStatement pst = null;
 		try {
-			// 获取连接
 			conn = DBManager.getConnection();
-			// sql语句
 			
-			//-------------------------------查询记录列表-------------------------------------
 			String sql = "select * from USER_INFO where username like ? and name like ? limit "
 					+ start + "," + pageLine;
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, "%"+username+"%");
 			pst.setString(2, "%"+name+"%");
-			// 设置参数
 
 			ResultSet rs = pst.executeQuery();
-			//取得记录
 			while (rs.next()) {
 				UserInfo userInfo = new UserInfo();
 				userInfo.setId(rs.getInt("id"));
@@ -235,18 +212,16 @@ public class UserInfoDao {
 				userInfo.setEmail(rs.getString("email"));
 				userInfo.setTelephone(rs.getString("telephone"));
 				userInfo.setRemark(rs.getString("remark"));
-				list.add(userInfo);//将userINfo添加到list中去
+				list.add(userInfo);//锟斤拷userINfo锟斤拷拥锟絣ist锟斤拷去
 			}
 			rs.close();
 			pst.close();
 			
-			//----------------------------------------查询总记录数----------------------------------
 			pst = conn.prepareStatement("select count(*) from USER_INFO where username like ? and name like ?");
 			pst.setString(1, "%"+username+"%");
 			pst.setString(2, "%"+name+"%");
 			rs = pst.executeQuery();
             if(rs.next()){
-            	//只有一列，可以直接用序号取得,将总记录数加到list的最后一条记录,可用list.remove(list.size()-1)方法获得并删除
             	list.add(rs.getInt(1));
             }
             rs.close();
@@ -254,7 +229,6 @@ public class UserInfoDao {
 			e.printStackTrace();
 
 		}
-		// 最后关闭语句和连接
 		finally {
 			if (pst != null) {
 				try {
@@ -279,7 +253,6 @@ public class UserInfoDao {
 	}
 	
 	/**
-	 * 删除方法
 	 * @param userId
 	 * @throws Exception
 	 */
@@ -288,19 +261,19 @@ public class UserInfoDao {
 		
 		Statement stmt = null;
 		
-		boolean autoCommit = true;//默认提交方式 
+		boolean autoCommit = true;//默锟斤拷锟结交锟斤拷式 
 		try{
 			conn = DBManager.getConnection();
-			autoCommit = conn.getAutoCommit();//取得默认提交方式
+			autoCommit = conn.getAutoCommit();//取锟斤拷默锟斤拷锟结交锟斤拷式
 			conn.setAutoCommit(false);
 			stmt = conn.createStatement();//
 			stmt.executeUpdate("delete from TEST_RESULT where userId="+userId);
 			stmt.executeUpdate("delete from USER_INFO where id="+userId);
 			
-			conn.commit();//提交事务
+			conn.commit();//锟结交锟斤拷锟斤拷
 		}
 		catch(Exception e){
-			conn.rollback();//回滚
+			conn.rollback();//锟截癸拷
 			e.printStackTrace();
 			throw e;
 		}
@@ -326,7 +299,6 @@ public class UserInfoDao {
 	}
 	
 	/**
-	 * 修改密码
 	 * @param pwd
 	 */
 	public void updatePwd(String pwd, int userId) {

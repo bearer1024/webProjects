@@ -2,21 +2,21 @@ package com.gxa.bean;
 
 public class UserInfo {
 	
-	private String username ; //用户名
+	private String username ; 
 	
-	private String pwd;   //密码
+	private String pwd; 
 	
-	private String name;  //姓名
+	private String name; 
 	
-	private  String sex;  //性别 男女
+	private  String sex;
 	
-	private String telephone; //电话
+	private String telephone; 
 	
-	private String email;//邮件
+	private String email;
 	
-	private String remark;//备注
+	private String remark;
 	
-	private int id  ;    //id
+	private int id  ;  
 	
 	
 	public UserInfo(){
