@@ -174,10 +174,10 @@ public class UserInfoDao {
 	}
 	
 	/**
-	 * @param username �û���
-	 * @param name  ���� 
-	 * @param start ��ʼ��¼��
-	 * @param pageLine ÿҳ��ʾ��
+	 * @param username 
+	 * @param name   
+	 * @param start 
+	 * @param pageLine 
 	 * @return
 	 */
 	public List getUserList(String username,String name ,int start ,int pageLine){
@@ -212,7 +212,7 @@ public class UserInfoDao {
 				userInfo.setEmail(rs.getString("email"));
 				userInfo.setTelephone(rs.getString("telephone"));
 				userInfo.setRemark(rs.getString("remark"));
-				list.add(userInfo);//��userINfo��ӵ�list��ȥ
+				list.add(userInfo);
 			}
 			rs.close();
 			pst.close();
@@ -261,19 +261,19 @@ public class UserInfoDao {
 		
 		Statement stmt = null;
 		
-		boolean autoCommit = true;//Ĭ���ύ��ʽ 
+		boolean autoCommit = true;
 		try{
 			conn = DBManager.getConnection();
-			autoCommit = conn.getAutoCommit();//ȡ��Ĭ���ύ��ʽ
+			autoCommit = conn.getAutoCommit();
 			conn.setAutoCommit(false);
-			stmt = conn.createStatement();//
+			stmt = conn.createStatement();
 			stmt.executeUpdate("delete from TEST_RESULT where userId="+userId);
 			stmt.executeUpdate("delete from USER_INFO where id="+userId);
 			
-			conn.commit();//�ύ����
+			conn.commit();
 		}
 		catch(Exception e){
-			conn.rollback();//�ع�
+			conn.rollback();
 			e.printStackTrace();
 			throw e;
 		}

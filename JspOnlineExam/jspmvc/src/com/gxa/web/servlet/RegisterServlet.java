@@ -39,17 +39,16 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");//Í³Ò»ÉèÖÃ±àÂë£¬²»ÓÃÔÙÖØ¸´Ð´×ª±àÂëÓï¾ä
+		request.setCharacterEncoding("UTF-8");
 		String username = request.getParameter("username");
 		String pwd = request.getParameter("pwd");
 		MD5 md5 = new MD5();
 		pwd = md5.getMD5ofStr(pwd);
 		String name =request.getParameter("name");
-		String sex = request.getParameter("sex");;  //ÐÔ±ð ÄÐÅ®
-		String telephone = request.getParameter("telephone");; //µç»°
-		String email = request.getParameter("email");;//ÓÊ¼þ
-		String remark = request.getParameter("remark");;//±¸×¢
-		//·â×°ÐÅÏ¢µ½userInfo
+		String sex = request.getParameter("sex");
+		String telephone = request.getParameter("telephone");
+		String email = request.getParameter("email");
+		String remark = request.getParameter("remark");
 		UserInfo userInfo = new UserInfo();
 		userInfo.setUsername(username);
 		userInfo.setPwd(pwd);
@@ -61,7 +60,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		UserInfoDao userInfoDao = new UserInfoDao();
 		if(userInfoDao.isExistUsername(username, 0)){
-			request.setAttribute("error", "×¢²áÊ§°Ü:ÓÃ»§ÒÑ´æÔÚ");
+			request.setAttribute("error", "×¢ï¿½ï¿½Ê§ï¿½ï¿½:ï¿½Ã»ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½");
 			request.getRequestDispatcher("/register.jsp").forward(request,response);
 		}else{
 			try {
@@ -70,14 +69,14 @@ public class RegisterServlet extends HttpServlet {
 				PrintWriter out = response.getWriter();
 				out.println("<html><head></head><body>");
 				out.print("<script type=\"text/javascript\" language=\"javascript\">");
-				out.print("alert('×¢²á³É¹¦');");
+				out.print("alert('×¢ï¿½ï¿½É¹ï¿½');");
 				out.print("window.location='login.jsp';");
 				out.print("</script>");
 				out.print("</body></html>");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				request.setAttribute("error", "±£´æÐÅÏ¢Ê§°Ü:"+e.getMessage());
+				request.setAttribute("error", e.getMessage());
 				request.getRequestDispatcher("/register.jsp").forward(request,response);
 		
 			}
